@@ -1,0 +1,13 @@
+User-agent: *
+{% if not debug %}
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /accounts/
+Disallow: /search/
+
+Sitemap: {{ site_url }}/sitemap.xml
+{% else %}
+Disallow: /
+{% endif %}

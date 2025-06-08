@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Цветочный Магазин</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hero {
+        background: url("img/flower-background.jpg") center/cover no-repeat;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      .card img {
+        object-fit: cover;
+        height: 200px;
+      }
+      .logo {
+        width: 100px; 
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-dark text-white py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="./index.html">
+          <img src="img/logo.jpg" alt="Логотип" class="logo" />
+        </a>
+        <nav>
+          <a href="#about" class="text-white mx-3 text-decoration-none"
+            >О нас</a
+          >
+          <a href="#products" class="text-white mx-3 text-decoration-none"
+            >Каталог</a
+          >
+          <a href="#contact" class="text-white mx-3 text-decoration-none"
+            >Контакты</a
+          >
+          <a href="./basket.html" class="text-white mx-3 text-decoration-none"
+            >Корзина</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <section
+      class="hero d-flex align-items-center justify-content-center text-center"
+      style="height: 80vh"
+    >
+      <div>
+        <h1>Добро пожаловать в PAVLIN</h1>
+        <p class="lead">Самые свежие и красивые цветы для вас</p>
+        <a href="#products" class="btn btn-primary btn-lg"
+          >Посмотреть Каталог</a
+        >
+      </div>
+    </section>
+
+    <section id="about" class="py-5">
+      <div class="container text-center">
+        <h2 class="mb-4">О нас</h2>
+        <p>
+          Как команда флористов, мы посвящены созданию исключительных цветочных шедевров. Каждый цветок отбирается с особой тщательностью, гарантируя высочайшее качество и свежесть. Наша миссия - воплощать ваши цветочные мечты в ослепительную реальность, будь то для свадеб, мероприятий или личных подарков. Мы гордимся нашим первоклассным обслуживанием и индивидуальным подходом, обеспечивая незабываемые цветочные впечатления. Присоединяйтесь к нам и позвольте цветам украсить вашу жизнь.
+        
+        </p>
+      </div>
+    </section>
+
+    <section id="products" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Наш Каталог</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/roze.jpg" class="card-img-top" alt="Розы" />
+              <div class="card-body">
+                <h5 class="card-title">Розы</h5>
+                <p class="card-text">
+                  Классические букеты роз для любого случая.
+                </p>
+                <a href="#" class="btn btn-primary">Подробнее</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img src="img/tulpan.jpg" class="card-img-top" alt="Тюльпаны" />
+              <div class="card-body">
+                <h5 class="card-title">Тюльпаны</h5>
+                <p class="card-text">
+                  Яркие и свежие тюльпаны для вашего настроения.
+                </p>
+                <a href="#" class="btn btn-primary">Подробнее</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="img/avtor-buket.jpg"
+                class="card-img-top"
+                alt="Букеты"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Авторские букеты</h5>
+                <p class="card-text">
+                  Индивидуальный подход к созданию букетов.
+                </p>
+                <a href="#" class="btn btn-primary">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Контакты</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Наш адрес</h5>
+            <p>ул. Пушкинская, д. 12, г. Ростов-на-Дону</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Свяжитесь с нами</h5>
+            <p>Телефон: +7 (123) 456-7890</p>
+            <p>Email: info@flowerparadise.ru</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+      <p class="mb-0">© 2024 PAVLIN. Все права защищены.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

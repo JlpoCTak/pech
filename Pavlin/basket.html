@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Корзина - Цветочный Магазин</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="{% static 'katalog/css/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <header class="bg-dark text-white py-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="./index.html">
+          <img src="img/logo.jpg" alt="Логотип" class="logo" />
+        </a>
+        <nav>
+          <a
+            href="index.html#about"
+            class="text-white mx-3 text-decoration-none"
+            >О нас</a
+          >
+          <a
+            href="index.html#products"
+            class="text-white mx-3 text-decoration-none"
+            >Каталог</a
+          >
+          <a
+            href="index.html#contact"
+            class="text-white mx-3 text-decoration-none"
+            >Контакты</a
+          >
+          <a href="cart.html" class="text-white mx-3 text-decoration-none">
+            <i class="bi bi-cart"></i> Корзина
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container cart-container">
+      <h2 class="text-center mb-4">Ваша Корзина</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="list-group">
+            
+            <div class="list-group-item d-flex align-items-center">
+              <img src="img/roze.jpg" alt="Розы" class="me-3" />
+              <div>
+                <h5>Розы</h5>
+                <p class="mb-0">1 шт. x 500 руб.</p>
+              </div>
+              <div class="ms-auto">
+                <span class="badge bg-primary rounded-pill">500 руб.</span>
+                <input type="number" min="1" />
+              </div>
+            </div>
+            
+            <div class="list-group-item d-flex align-items-center">
+              <img src="img/tulpan.jpg" alt="Тюльпаны" class="me-3" />
+              <div>
+                <h5>Тюльпаны</h5>
+                <p class="mb-0">2 шт. x 300 руб.</p>
+              </div>
+              <div class="ms-auto">
+                <span class="badge bg-primary rounded-pill">600 руб.</span>
+                <input type="number" min="1" />
+              </div>
+            </div>
+            
+            <div class="list-group-item d-flex align-items-center">
+              <img
+                src="img/avtor-buket.jpg"
+                alt="Авторские букеты"
+                class="me-3"
+              />
+              <div>
+                <h5>Авторские букеты</h5>
+                <p class="mb-0">1 шт. x 1500 руб.</p>
+              </div>
+              <div class="ms-auto">
+                <span class="badge bg-primary rounded-pill">1500 руб.</span>
+                <input type="number" min="1" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Итого</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Сумма:</span>
+                  <strong>2600 руб.</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Доставка:</span>
+                  <strong>Бесплатно</strong>
+                </li>
+              </ul>
+              <hr />
+              <div class="d-grid">
+                <button class="btn btn-primary btn-lg">Оформить заказ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+      <p class="mb-0">© 2024 PAVLIN. Все права защищены.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

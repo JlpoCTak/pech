@@ -1,0 +1,89 @@
+{% extends 'katalog/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Цветочный Магазин</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'katalog/css/style.css' %}" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="{% url 'katalog:index' %}">
+                <img src="{% static 'katalog/img/logo.jpg' %}" alt="Логотип" class="logo">
+            </a>
+            <nav>
+                <a href="{% url 'katalog:index' %}#about" class="text-white mx-3 text-decoration-none">О нас</a>
+                <a href="{% url 'katalog:index' %}#products" class="text-white mx-3 text-decoration-none">Каталог</a>
+                <a href="{% url 'katalog:index' %}#contact" class="text-white mx-3 text-decoration-none">Контакты</a>
+                <a href="{% url 'katalog:cart_detail' %}" class="text-white mx-3 text-decoration-none">
+                    <i class="bi bi-cart"></i> Корзина
+                </a>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-grow-1 ">
+        <div class="container cart-container mt-5">
+            <h2 class="text-center mb-4">Ваша Корзина</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="list-group">
+                        {% for item in cart.items.all %}
+                        <div class="list-group-item d-flex align-items-center">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="me-3" width="80">
+                            <div>
+                                <h5>{{ item.product.name }}</h5>
+                                <p class="mb-0">{{ item.quantity }} шт. x {{ item.product.price }} руб.</p>
+                            </div>
+                            <div class="ms-auto">
+                                <span class="badge bg-primary rounded-pill">{{ item.price }} руб.</span>
+                                <form method="post" action="{% url 'katalog:update_cart' item.id %}" class="d-inline">
+                                    {% csrf_token %}
+                                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1" class="form-control d-inline" style="width: 70px;">
+                                </form>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Итого</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Сумма:</span>
+                                    <strong>{{ cart.total_price }} руб.</strong>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <span>Доставка:</span>
+                                    <strong>Бесплатно</strong>
+                                </li>
+                            </ul>
+                            <hr>
+                            <div class="d-grid">
+                                <a href="{% url 'katalog:checkout' %}" class="btn btn-primary">
+                                    Оформить заказ <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <p class="mb-0">© 2025 PAVLIN. Все права защищены.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'katalog/js/main.js' %}"></script>
+</body>
+</html>
+{% endblock %}
